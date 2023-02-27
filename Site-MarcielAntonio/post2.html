@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        /* Estilo para o corpo da página */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #F5F5F5;
+          padding: 30px;
+        }
+  
+        /* Estilo para a largura máxima da página */
+        .container {
+          max-width: 1170px;
+          margin: 0 auto;
+        }
+  
+        /* Estilo para o título da postagem */
+        h1 {
+          font-size: 36px;
+          color: #333;
+          margin-bottom: 20px;
+        }
+  
+        /* Estilo para o título da seção de comentários */
+        h2.comments-title {
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 20px;
+        }
+  
+        /* Estilo para o texto da postagem */
+        .post-text {
+          font-size: 18px;
+          color: #333;
+          line-height: 1.5;
+          margin-bottom: 30px;
+        }
+  
+        /* Estilo para a seção de comentários */
+        .comments {
+          background-color: #FFFFFF;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px #BBBBBB;
+          margin-bottom: 30px;
+        }
+  
+        /* Estilo para a caixa
+        .comment-box {
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para o nome do autor do comentário */
+  .comment-box p strong {
+    color: #333;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para o texto do comentário */
+  .comment-box p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0;
+  }
+  
+  /* Estilo para o formulário de comentários */
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Estilo para o input de nome */
+  form input[type="text"] {
+    flex-basis: 45%;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px #BBBBBB;
+  }
+  
+  /* Estilo para o input de comentário */
+  form textarea {
+    flex-basis: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+  }
+  
+  /* Estilo para o botão de envio de comentário */
+  form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0095ff;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para as mensagens de erro */
+  form .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  
+  /* Estilo para os comentários */
+  .comments {
+    margin-top: 50px;
+  }
+  
+  .comments h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .comments .comment {
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  .comments .comment .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .comments .comment .info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .comments .comment .info h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .comments .comment .text {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  /* Estilo para as respostas aos comentários */
+  .comments .comment .replies {
+    margin-top: 20px;
+  }
+  
+  .comments .comment .replies .reply {
+    padding: 20px;
+    background-color: #e6e6e6;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  .comments .comment .replies .reply .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .comments .comment .replies .reply .info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .comments .comment .replies .reply .info h4 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .comments .comment .replies .reply .text {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .comments .comment .username {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .comments .comment .time {
+    color: gray;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .comments .comment .actions {
+    margin-top: 10px;
+    text-align: right;
+  }
+  
+  .comments .comment .actions a {
+    color: blue;
+    margin-left: 10px;
+    text-decoration: underline;
+  }
+  </style>
+  <title>Minha Página de Postagem</title>
+</head>
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="trabalhos.html">Página Inicial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <h1>Gato de Botas</h1>
+  <p>A dublagem brasileira do filme "Gato de Botas" é incrivelmente talentosa e deixa um impacto positivo no espectador. A equipe de atores de voz consegue transmitir de forma perfeita a personalidade única de cada personagem, seja ele o astuto gato ou o vilão Humpty Dumpty. A sincronização labial e a inflexão de voz são impecáveis, tornando a experiência de assistir ao filme ainda mais envolvente. Além disso, as traduções das falas são bem-feitas e conseguem preservar o espírito da história original. Em suma, a dublagem brasileira do "Gato de Botas" é uma obra-prima do cinema e merece ser reconhecida como tal.</p>
+
+  <h2>Comentários</h2>
+  <div id="comentarios">
+    <!-- Aqui serão adicionados os comentários -->
+  </div>
+
+  <h3>Deixe seu comentário</h3>
+  <form>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <textarea id="comentario" placeholder="Seu comentário"></textarea>
+    <button type="button" onclick="enviarComentario()">Enviar</button>
+
+  </form>
+
+  <script>
+    function enviarComentario() {
+      // Obtém os dados do formulário
+      const nome = document.getElementById("nome").value;
+      const comentario = document.getElementById("comentario").value;
+      if (!nome || !comentario) {
+        alert("Por favor, preencha todos os campos para enviar seu comentário");
+        return;
+      }
+      
+      // Cria um novo elemento para exibir o comentário
+      const novoComentario = document.createElement("p");
+      novoComentario.innerHTML = `<strong>${nome}</strong>: ${comentario}`;
+
+      // Adiciona o comentário na lista de comentários
+      document.getElementById("comentarios").appendChild(novoComentario);
+
+      // Limpa o formulário
+      document.getElementById("nome").value = "";
+      document.getElementById("comentario").value = "";
+    }
+  </script>
+</body>
+</html>
